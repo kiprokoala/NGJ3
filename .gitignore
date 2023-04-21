@@ -1,0 +1,9 @@
+/Build
+/Library
+/Logs
+/obj
+/UserSettings
+/Temp
+.vsconfig
+Test.sln
+.vs

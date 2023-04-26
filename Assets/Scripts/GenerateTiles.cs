@@ -8,12 +8,16 @@ public class GenerateTiles : MonoBehaviour
     
     public Tile ground;
     public Tile window;
-    public Tile wall;
 
-    public Tile up_left_door;
-    public Tile up_right_door;
+    public Tile wall_brown;
+    public Tile wall_green;
+    public Tile wall_blue;
+
     public Tile down_left_door;
     public Tile down_right_door;
+    public Tile up_right_door;
+    public Tile up_left_door;
+
     void Start()
     {
         //Pour avoir le sol continu (100 est juste une valeur de test, à modifier lors de la génération)
@@ -22,28 +26,30 @@ public class GenerateTiles : MonoBehaviour
             for (int j = -6; j <= -2; j++)
             {
                 tilemap_ground.SetTile(new Vector3Int(i, j, 0), ground);
-                if (i % 11 == 0) { generateBuilding(i); }
+                if (i % 33 == 0) { generateBuilding(i, wall_brown); }
+                if (i % 33 == 11) { generateBuilding(i, wall_green); }
+                if (i % 33 == 22) { generateBuilding(i, wall_blue); }
             }
         }
     }
 
     //Un bâtiment de référence, mais peut être modifié pour d'autres besoins
-    void generateBuilding(int beginning)
+    void generateBuilding(int beginning, Tile _wall)
     {
         for (int i = beginning; i < beginning + 10; i++)
         {
             for (int j = -1; j <= 8; j++)
             {
                 //On remplit tout le bâtiment de la brique de base
-                tilemap_buildings.SetTile(new Vector3Int(i, j, 0), wall);
+                tilemap_buildings.SetTile(new Vector3Int(i, j, 0), _wall);
             }
         }
 
         //Construction de la porte
         tilemap_buildings.SetTile(new Vector3Int(beginning + 4, -1, 0), down_left_door);
-        tilemap_buildings.SetTile(new Vector3Int(beginning + 4, 0, 0), up_left_door);
-        tilemap_buildings.SetTile(new Vector3Int(beginning + 5, 0, 0), up_right_door);
         tilemap_buildings.SetTile(new Vector3Int(beginning + 5, -1, 0), down_right_door);
+        tilemap_buildings.SetTile(new Vector3Int(beginning + 5, 0, 0), up_right_door);
+        tilemap_buildings.SetTile(new Vector3Int(beginning + 4, 0, 0), up_left_door);
 
         //Les fenêtres (sinon ça faisait 16 lignes, j'ai décidé de le raccourcir)
         int[] positions_x = { beginning + 1, beginning + 2, beginning + 7, beginning + 8 };

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: a5b1748a69390b04798c042cac589273
+guid: 704be4d46eafdd64e97c7b9b9f13d6d1
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -44,7 +44,7 @@ TextureImporter:
   compressionQuality: 50
   spriteMode: 2
   spriteExtrude: 1
-  spriteMeshType: 1
+  spriteMeshType: 0
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 10
@@ -69,7 +69,7 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
+    textureFormat: 4
     textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
@@ -105,7 +105,70 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: door_up_left
+      name: briqued_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 22
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc77688e4f2de6e48ae511aa3036a455
+      internalID: 2092721059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: briqued_1
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 22
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0465955509b26ab4f9e26a57004b70ea
+      internalID: 1539452227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: briqued_2
+      rect:
+        serializedVersion: 2
+        x: 22
+        y: 22
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6714b943361059f49b4515902a14d69f
+      internalID: -1604128926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: briqued_3
       rect:
         serializedVersion: 2
         x: 0
@@ -113,41 +176,20 @@ TextureImporter:
         width: 10
         height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4d8536f9a359dd648afe78327bb9a362
-      internalID: 106213953
+      spriteID: a0766e3c588aa8a4c93d7735d2224704
+      internalID: 985004854
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: window
-      rect:
-        serializedVersion: 2
-        x: 11
-        y: 11
-        width: 10
-        height: 10
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8172060ee3c049e4da81477ca5a27b09
-      internalID: -225365155
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: door_up_right
+      name: briqued_4
       rect:
         serializedVersion: 2
         x: 22
@@ -155,20 +197,20 @@ TextureImporter:
         width: 10
         height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f693c8094923ebf4280348e9c455d509
-      internalID: 1162137209
+      spriteID: 22d6c88137a3df443b11be42c294aebb
+      internalID: 95287650
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door_down_left
+      name: briqued_5
       rect:
         serializedVersion: 2
         x: 0
@@ -176,20 +218,20 @@ TextureImporter:
         width: 10
         height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2540cc68196bb2f468bf367cad19f70b
-      internalID: -225308289
+      spriteID: 1d19ceb4aa2df7646ae0c87be199b7a8
+      internalID: 944958487
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: wall
+      name: briqued_6
       rect:
         serializedVersion: 2
         x: 11
@@ -197,20 +239,20 @@ TextureImporter:
         width: 10
         height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c1761987596ceb4ea716799eae81d00
-      internalID: 1040042619
+      spriteID: e105a389c95aece4c8e99086efbeff0e
+      internalID: -283969864
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: door_down_right
+      name: briqued_7
       rect:
         serializedVersion: 2
         x: 22
@@ -218,14 +260,14 @@ TextureImporter:
         width: 10
         height: 10
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efeb4fadaab0d2c459309aeca49720e9
-      internalID: -1068676481
+      spriteID: bd4caf80f36ffc7478d88dcfddc315f4
+      internalID: -1661098458
       vertices: []
       indices: 
       edges: []
@@ -241,12 +283,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      door_up_left: 106213953
-      door_up_right: 1162137209
-      wall: 1040042619
-      door_down_left: -225308289
-      door_down_right: -1068676481
-      window: -225365155
+      briqued_5: 944958487
+      briqued_2: -1604128926
+      briqued_6: -283969864
+      briqued_4: 95287650
+      briqued_3: 985004854
+      briqued_7: -1661098458
+      briqued_1: 1539452227
+      briqued_0: 2092721059
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

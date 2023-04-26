@@ -3246,6 +3246,7 @@ GameObject:
   - component: {fileID: 1683518290}
   - component: {fileID: 1683518292}
   - component: {fileID: 1683518293}
+  - component: {fileID: 1683518294}
   m_Layer: 0
   m_Name: chara
   m_TagString: Untagged
@@ -3346,6 +3347,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lifebar: {fileID: 1539557422}
+--- !u!114 &1683518294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683518289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99de447e52a48f54dbc279dceb64495e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemap_ground: {fileID: 1202941792}
+  tilemap_buildings: {fileID: 744166312}
+  ground: {fileID: 11400000, guid: 31cee5113e9126e48810e32fe866d81b, type: 2}
+  window: {fileID: 11400000, guid: 4f2956fba84e2ef4f99f15578d7c095a, type: 2}
+  wall: {fileID: 11400000, guid: 182e4f9cd6067564a9b75bad4eae8cd2, type: 2}
+  up_left_door: {fileID: 11400000, guid: b16a7c66cfcc13d46adf60b5943c4f98, type: 2}
+  up_right_door: {fileID: 11400000, guid: a503b0b5c3f92e846966fcfb55696501, type: 2}
+  down_left_door: {fileID: 11400000, guid: 09ad2adf2072f5344a99143992ebce29, type: 2}
+  down_right_door: {fileID: 11400000, guid: 94b86024d981a1644aea366c73bfffb2, type: 2}
 --- !u!1 &1990848887
 GameObject:
   m_ObjectHideFlags: 0

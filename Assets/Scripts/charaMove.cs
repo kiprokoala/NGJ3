@@ -4,7 +4,6 @@ public class charaMove : MonoBehaviour
 {
     public float moveSpeed;
 
-    private Vector3 velocity = Vector3.zero;
     private float horizontalMovement;
     private float verticalMovement;
 
@@ -27,9 +26,11 @@ public class charaMove : MonoBehaviour
         //On donne la valeur de l'input donné aux positions (pour déplacer de tant)
         float pos_x = transform.position.x + _horizontalMovement;
         float pos_y = transform.position.y + _verticalMovement;
+
         //On vérifie que ce n'est pas hors bounds
-        pos_x = (pos_x > -10f) ? pos_x : transform.position.x ;
-        pos_y = (pos_y < -0.5f && pos_y > -5f) ? pos_y : transform.position.y;
+        pos_x = (pos_x > 0) ? pos_x : transform.position.x ;
+        pos_y = (pos_y <= 5.5f && pos_y > 1f) ? pos_y : transform.position.y;
+        
         //On donne enfin la valeur à la position du joueur
         transform.position = new Vector3(pos_x, pos_y,0);
     }

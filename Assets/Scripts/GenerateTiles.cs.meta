@@ -3,7 +3,16 @@ guid: 99de447e52a48f54dbc279dceb64495e
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - tilemap_ground: {instanceID: 0}
+  - tilemap_buildings: {instanceID: 0}
+  - ground: {fileID: 11400000, guid: 31cee5113e9126e48810e32fe866d81b, type: 2}
+  - window: {fileID: 11400000, guid: 0a7ee6aa1940bca4490f4996fe31caed, type: 2}
+  - down_left_door: {fileID: 11400000, guid: 17856234779fd8346930a468a8b43dfc, type: 2}
+  - down_right_door: {fileID: 11400000, guid: 74d538fd8d5220d4e90054450380e9ac, type: 2}
+  - up_right_door: {fileID: 11400000, guid: b24db42f83bd3cb42afb131371f074b8, type: 2}
+  - up_left_door: {fileID: 11400000, guid: 9e39226597b217340acc727e73a8df35, type: 2}
+  - checkpoint: {fileID: 5268434509835860664, guid: 7d114c4ecf960a944a3dfae4ce8b2445, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

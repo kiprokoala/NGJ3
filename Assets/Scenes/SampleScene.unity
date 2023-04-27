@@ -351,7 +351,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0, g: 0.7035146, b: 1, a: 0}
+  m_BackGroundColor: {r: 0.17288181, g: 0.28330508, b: 0.3301887, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
@@ -1147,6 +1147,8 @@ GameObject:
   - component: {fileID: 1683518292}
   - component: {fileID: 1683518293}
   - component: {fileID: 1683518294}
+  - component: {fileID: 1683518295}
+  - component: {fileID: 1683518296}
   m_Layer: 0
   m_Name: chara
   m_TagString: Untagged
@@ -1214,7 +1216,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1683518289}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.31114805, y: -3.16, z: 0}
+  m_LocalPosition: {x: 0, y: 3, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1233,7 +1235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c2061761f8c9bd4ca730b9c9ecb970b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 7
 --- !u!114 &1683518293
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1259,17 +1261,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99de447e52a48f54dbc279dceb64495e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  actual_x: -22
   tilemap_ground: {fileID: 1202941792}
   tilemap_buildings: {fileID: 744166312}
   ground: {fileID: 11400000, guid: 31cee5113e9126e48810e32fe866d81b, type: 2}
   window: {fileID: 11400000, guid: 0a7ee6aa1940bca4490f4996fe31caed, type: 2}
-  wall_brown: {fileID: 11400000, guid: 63f55044d661b7b49b473d4212648a28, type: 2}
-  wall_green: {fileID: 11400000, guid: 972f630f40d464d4f889e0465cd89eda, type: 2}
-  wall_blue: {fileID: 11400000, guid: 57f3b518fca4f364a9bb16746f074c6d, type: 2}
+  tiles:
+  - {fileID: 11400000, guid: 63f55044d661b7b49b473d4212648a28, type: 2}
+  - {fileID: 11400000, guid: 972f630f40d464d4f889e0465cd89eda, type: 2}
+  - {fileID: 11400000, guid: 57f3b518fca4f364a9bb16746f074c6d, type: 2}
   down_left_door: {fileID: 11400000, guid: 17856234779fd8346930a468a8b43dfc, type: 2}
   down_right_door: {fileID: 11400000, guid: 74d538fd8d5220d4e90054450380e9ac, type: 2}
   up_right_door: {fileID: 11400000, guid: b24db42f83bd3cb42afb131371f074b8, type: 2}
   up_left_door: {fileID: 11400000, guid: 9e39226597b217340acc727e73a8df35, type: 2}
+  checkpoint: {fileID: 5268434509835860664, guid: 7d114c4ecf960a944a3dfae4ce8b2445, type: 3}
+--- !u!50 &1683518295
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683518289}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 0
+--- !u!61 &1683518296
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1683518289}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.3, y: 0, z: 0.5, w: 0.3}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.6, y: 1.6}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.6, y: 1.6}
+  m_EdgeRadius: 0
 --- !u!1 &1990848887
 GameObject:
   m_ObjectHideFlags: 0

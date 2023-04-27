@@ -29,7 +29,7 @@ public class charaMove : MonoBehaviour
 
         //On vérifie que ce n'est pas hors bounds
         pos_x = (pos_x > 0) ? pos_x : transform.position.x ;
-        pos_y = (pos_y <= 5.5f && pos_y > 1f) ? pos_y : transform.position.y;
+        pos_y = (pos_y <= GenerateTiles.instance.ground_height && pos_y > 1f) ? pos_y : transform.position.y;
         
         //On donne enfin la valeur à la position du joueur
         transform.position = new Vector3(pos_x, pos_y,0);

@@ -5,7 +5,7 @@ using UnityEngine.Tilemaps;
 
 public class GenerateTiles : MonoBehaviour
 {
-    private int ground_height = 5;
+    public int ground_height = 10;
     public int actual_x = -22;
 
     public Tilemap tilemap_ground;
@@ -22,6 +22,7 @@ public class GenerateTiles : MonoBehaviour
     public Tile up_left_door;
 
     public GameObject checkpoint;
+    public GameObject enemy;
 
     public static GenerateTiles instance;
 
@@ -47,7 +48,12 @@ public class GenerateTiles : MonoBehaviour
     {
         generateGround();
         generateBuilding();
-        Instantiate(checkpoint, new Vector3(actual_x, 3, 0), Quaternion.identity);
+        if (actual_x > 0)
+        {
+            Instantiate(checkpoint, new Vector3(actual_x, 5, 0), Quaternion.identity);
+            Instantiate(enemy, new Vector3(actual_x + 3, 2, 0), Quaternion.identity);
+            Instantiate(enemy, new Vector3(actual_x + 2, 6, 0), Quaternion.identity);
+        }
         actual_x += 11;
     }
 

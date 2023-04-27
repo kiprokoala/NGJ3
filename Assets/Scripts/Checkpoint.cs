@@ -4,7 +4,10 @@ public class Checkpoint : MonoBehaviour
 {
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        GenerateTiles.instance.GenerateLandscape();
-        Destroy(gameObject);
+        if (collision.transform.tag == "Player")
+        {
+            GenerateTiles.instance.GenerateLandscape();
+            Destroy(gameObject);
+        }
     }
 }

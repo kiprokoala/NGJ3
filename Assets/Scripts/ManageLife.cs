@@ -4,10 +4,12 @@ public class ManageLife : MonoBehaviour
 {
     private int health = 10;
     public Lifebar lifebar;
+
     private void Start()
     {
         lifebar.SetMaxHealth(health);   
     }
+
     private void Update()
     {
         //Mort

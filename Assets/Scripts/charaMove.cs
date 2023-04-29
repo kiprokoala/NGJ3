@@ -7,6 +7,8 @@ public class charaMove : MonoBehaviour
     private float horizontalMovement;
     private float verticalMovement;
 
+    public Animator animator;
+
     void FixedUpdate()
     {
         horizontalMovement = Input.GetAxis("Horizontal") * moveSpeed * Time.fixedDeltaTime;
@@ -19,6 +21,10 @@ public class charaMove : MonoBehaviour
     private void Update()
     {
         MovePlayer(horizontalMovement, verticalMovement);
+        if (Input.GetKeyDown(KeyCode.C))
+        {
+            animator.SetTrigger("isPunching");
+        }
     }
 
     void MovePlayer(float _horizontalMovement, float _verticalMovement)
@@ -28,10 +34,10 @@ public class charaMove : MonoBehaviour
         float pos_y = transform.position.y + _verticalMovement;
 
         //On vérifie que ce n'est pas hors bounds
-        pos_x = (pos_x > 0) ? pos_x : transform.position.x ;
+        pos_x = (pos_x > 0) ? pos_x : transform.position.x;
         pos_y = (pos_y <= GenerateTiles.instance.ground_height && pos_y > 1f) ? pos_y : transform.position.y;
-        
+
         //On donne enfin la valeur à la position du joueur
-        transform.position = new Vector3(pos_x, pos_y,0);
+        transform.position = new Vector3(pos_x, pos_y, 0);
     }
 }

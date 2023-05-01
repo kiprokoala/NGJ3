@@ -7,6 +7,8 @@ public class charaMove : MonoBehaviour
     private float horizontalMovement;
     private float verticalMovement;
 
+    public Rigidbody2D rb;
+
     public Animator animator;
 
     void FixedUpdate()
@@ -16,6 +18,7 @@ public class charaMove : MonoBehaviour
 
         //On met la local scale dans le sens du déplacement du personnage
         transform.localScale = horizontalMovement <= -0.01f ? new Vector3(-1, 1, 1) : (horizontalMovement >= 0.01f) ? new Vector3(1, 1, 1) : transform.localScale;
+        animator.SetFloat("speed", Mathf.Abs(horizontalMovement));
     }
 
     private void Update()

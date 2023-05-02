@@ -1,4 +1,6 @@
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Profiling.Experimental;
 
 public class EnemyBehavior : MonoBehaviour
 {
@@ -12,6 +14,7 @@ public class EnemyBehavior : MonoBehaviour
         if (life <= 0)
         {
             Destroy(gameObject);
+            Points.instance.addPoint();
         }
         moveEnemy();
     }
@@ -38,10 +41,6 @@ public class EnemyBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!Equals(collision.GetType(), typeof(BoxCollider2D)))
-        {
-            Debug.Log(collision.GetType() + " + " + collision.enabled);
-        }
         if (Equals(collision.GetType(), typeof(CircleCollider2D)) && collision.enabled)
         {
             life -= 1;

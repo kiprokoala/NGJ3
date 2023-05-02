@@ -24,6 +24,8 @@ public class Points : MonoBehaviour
     public void addPoint()
     {
         score += 1;
-        Debug.Log(score);
+        text.text = score.ToString();
     }
+
+
 }

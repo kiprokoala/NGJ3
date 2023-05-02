@@ -25,4 +25,14 @@ public class ManageLife : MonoBehaviour
             lifebar.setHealth(health);
         }
     }
+
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (Equals(collision.GetType(), typeof(CircleCollider2D)) && collision.enabled && Equals(collision.collider.GetType(), typeof(BoxCollider2D)))
+        {
+            health--;
+            lifebar.setHealth(health);
+        }
+    }
 }

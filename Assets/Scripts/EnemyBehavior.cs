@@ -31,17 +31,18 @@ public class EnemyBehavior : MonoBehaviour
         {
             transform.localScale = move.x <= -0.01f ? new Vector3(-1, 1, 1) : (move.x >= 0.01f) ? new Vector3(1, 1, 1) : transform.localScale;
             transform.position += (move * moveSpeed * Time.deltaTime);
-            animator.SetTrigger("moving");
+            animator.SetBool("moving", true);
         }
         else
         {
-            animator.ResetTrigger("moving");
+            animator.SetBool("moving", false);
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (Equals(collision.GetType(), typeof(CircleCollider2D)) && collision.enabled)
+        Debug.Log(collision.collider.GetType() + "<- me || them -> " + collision.otherCollider.GetType());
+        if (Equals(collision.collider.GetType(), typeof(CircleCollider2D)) && collision.enabled && Equals(collision.otherCollider.GetType(), typeof(BoxCollider2D)))
         {
             life -= 1;
         }

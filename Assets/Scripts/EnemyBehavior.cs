@@ -24,10 +24,9 @@ public class EnemyBehavior : MonoBehaviour
         GameObject _player = GameObject.FindGameObjectWithTag("Player");
 
         //On amène l'ennemi vers le joueur
-        Vector3 move = _player.transform.position - transform.position;
-        move = move.normalized;
-        float distance = Vector2.Distance(_player.transform.position, transform.position);
-        if (distance > 1.0f)
+        Vector3 move = (_player.transform.position - transform.position).normalized;
+        //On vérifie qu'il n'est pas trop loin du joueur (pour s'arrêter et taper)
+        if (Mathf.Abs(_player.transform.position.x - transform.position.x) > 1.5f)
         {
             transform.localScale = move.x <= -0.01f ? new Vector3(-1, 1, 1) : (move.x >= 0.01f) ? new Vector3(1, 1, 1) : transform.localScale;
             transform.position += (move * moveSpeed * Time.deltaTime);
@@ -41,8 +40,7 @@ public class EnemyBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Debug.Log(collision.collider.GetType() + "<- me || them -> " + collision.otherCollider.GetType());
-        if (Equals(collision.collider.GetType(), typeof(CircleCollider2D)) && collision.enabled && Equals(collision.otherCollider.GetType(), typeof(BoxCollider2D)))
+        if (Equals(collision.collider.GetType(), typeof(CircleCollider2D)) && collision.enabled && Equals(collision.otherCollider.GetType(), typeof(BoxCollider2D)) && collision.transform.tag == "Player")
         {
             life -= 1;
         }

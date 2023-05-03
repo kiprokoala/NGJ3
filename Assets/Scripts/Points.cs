@@ -21,9 +21,9 @@ public class Points : MonoBehaviour
     {
     }
 
-    public void addPoint()
+    public void addPoint(int pts)
     {
-        score += 1;
+        score += pts;
         text.text = score.ToString();
     }
 

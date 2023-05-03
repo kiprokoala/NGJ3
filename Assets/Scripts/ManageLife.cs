@@ -12,17 +12,9 @@ public class ManageLife : MonoBehaviour
 
     private void Update()
     {
-        //Mort
-        if (Input.GetKeyDown(KeyCode.M))
+        if (health == 0)
         {
-            health--;
-            lifebar.setHealth(health);
-        }
-        //Pouvoir
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            health++;
-            lifebar.setHealth(health);
+            Death();
         }
     }
 
@@ -34,5 +26,10 @@ public class ManageLife : MonoBehaviour
             health--;
             lifebar.setHealth(health);
         }
+    }
+
+    private void Death()
+    {
+
     }
 }

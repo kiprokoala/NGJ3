@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7705510929919690546}
   - component: {fileID: 7705510929919690544}
   - component: {fileID: 2646409022824402732}
+  - component: {fileID: 774672188}
+  - component: {fileID: -8936855409925684256}
   m_Layer: 0
   m_Name: enemy_1
   m_TagString: enemy
@@ -27,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7705510929919690548}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 5, y: 2, z: -3.051137}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46,9 +48,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: edd937addd0bd0d4ab10ada5a79b2552, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 1
+  maxLife: 4
   moveSpeed: 0.5
-  animator: {fileID: 0}
+  animator: {fileID: 774672188}
 --- !u!212 &7705510929919690544
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -111,19 +113,55 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.14469767, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.4, y: 2.6}
+    oldSize: {x: 1.7, y: 2.6}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.4, y: 2.6}
+  m_Size: {x: 1.3999996, y: 2.6}
   m_EdgeRadius: 0
+--- !u!95 &774672188
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7705510929919690548}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 18da54c2a96c56e43830d2989510cc89, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+--- !u!58 &-8936855409925684256
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7705510929919690548}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.6197754, y: 0.04269153}
+  serializedVersion: 2
+  m_Radius: 0.25674617

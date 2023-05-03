@@ -3,6 +3,7 @@ using UnityEngine;
 public class charaMove : MonoBehaviour
 {
     public float moveSpeed;
+    public int damage = 1;
 
     private float horizontalMovement;
     private float verticalMovement;
@@ -10,6 +11,17 @@ public class charaMove : MonoBehaviour
     public Rigidbody2D rb;
 
     public Animator animator;
+
+    public static charaMove instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            return;
+        }
+        instance = this;
+    }
 
     void FixedUpdate()
     {

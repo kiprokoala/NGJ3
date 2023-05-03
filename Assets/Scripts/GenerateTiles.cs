@@ -1,4 +1,5 @@
 using System;
+using System.Reflection;
 using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -8,6 +9,8 @@ public class GenerateTiles : MonoBehaviour
     public int ground_height = 10;
     public int actual_x = -22;
 
+    public int passed_checkpoint;
+
     public Tilemap tilemap_ground;
     public Tilemap tilemap_buildings;
 
@@ -15,6 +18,7 @@ public class GenerateTiles : MonoBehaviour
     public Tile window;
 
     public Tile[] tiles;
+    public GameObject[] enemies;
 
     public Tile down_left_door;
     public Tile down_right_door;
@@ -22,7 +26,7 @@ public class GenerateTiles : MonoBehaviour
     public Tile up_left_door;
 
     public GameObject checkpoint;
-    public GameObject enemy;
+    public GameObject sunglasses;
 
     public static GenerateTiles instance;
 
@@ -42,6 +46,8 @@ public class GenerateTiles : MonoBehaviour
         {
             GenerateLandscape();
         }
+
+        passed_checkpoint = 0;
     }
 
     public void GenerateLandscape()
@@ -51,8 +57,15 @@ public class GenerateTiles : MonoBehaviour
         if (actual_x > 0)
         {
             Instantiate(checkpoint, new Vector3(actual_x, 5, 0), Quaternion.identity);
-            Instantiate(enemy, new Vector3(actual_x + 3, 2, 0), Quaternion.identity);
-            Instantiate(enemy, new Vector3(actual_x + 2, 6, 0), Quaternion.identity);
+            //Random pour le nouvel ennemi créé
+            System.Random random = new System.Random();
+            GameObject enemy = enemies[random.Next(0, enemies.Length)];
+            Instantiate(enemy, new Vector3(actual_x + 3, ground_height / 2, 0), Quaternion.identity);
+
+            if (actual_x%220 == 0)
+            {
+                Instantiate(sunglasses, new Vector3(actual_x+1, ground_height - ground_height/2, 0), Quaternion.identity);
+            }
         }
         actual_x += 11;
     }

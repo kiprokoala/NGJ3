@@ -9,7 +9,7 @@ public class Checkpoint : MonoBehaviour
             GenerateTiles.instance.GenerateLandscape();
             Destroy(gameObject);
             GenerateTiles.instance.passed_checkpoint++;
-            charaMove.instance.moveSpeed += GenerateTiles.instance.passed_checkpoint / 1000;
+            charaMove.instance.upSpeed();
         }
     }
 }

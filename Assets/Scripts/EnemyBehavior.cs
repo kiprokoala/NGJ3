@@ -6,13 +6,14 @@ public class EnemyBehavior : MonoBehaviour
 {
     public int maxLife;
     private int life;
-    public float moveSpeed;
+    [SerializeField]
+    private float moveSpeed;
 
     public Animator animator;
 
     private void Start()
     {
-        moveSpeed += GenerateTiles.instance.passed_checkpoint / 1000;
+        moveSpeed += GenerateTiles.instance.passed_checkpoint / 10;
         life = maxLife;
     }
 

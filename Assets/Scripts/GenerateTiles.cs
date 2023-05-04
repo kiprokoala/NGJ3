@@ -27,6 +27,7 @@ public class GenerateTiles : MonoBehaviour
 
     public GameObject checkpoint;
     public GameObject sunglasses;
+    public GameObject apple;
 
     public static GenerateTiles instance;
 
@@ -65,6 +66,13 @@ public class GenerateTiles : MonoBehaviour
             if (actual_x%220 == 0)
             {
                 Instantiate(sunglasses, new Vector3(actual_x+1, ground_height - ground_height/2, 0), Quaternion.identity);
+            }
+
+            int new_apple = random.Next(1, 20);
+
+            if (new_apple == 1)
+            {
+                Instantiate(apple, new Vector3(actual_x+5, ground_height/2, 0), Quaternion.identity);
             }
         }
         actual_x += 11;

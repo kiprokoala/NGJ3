@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class charaMove : MonoBehaviour
 {
-    public float moveSpeed;
+    private float moveSpeed = 5;
     public int damage = 1;
 
     private float horizontalMovement;
@@ -54,5 +54,10 @@ public class charaMove : MonoBehaviour
 
         //On donne enfin la valeur à la position du joueur
         transform.position = new Vector3(pos_x, pos_y, 0);
+    }
+
+    public void upSpeed()
+    {
+        moveSpeed += 0.05f;
     }
 }

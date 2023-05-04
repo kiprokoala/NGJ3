@@ -2,21 +2,30 @@ using UnityEngine;
 
 public class ManageLife : MonoBehaviour
 {
-    private int health = 10;
-    public Lifebar lifebar;
+    private int maxHealth = 10;
+    private int health;
+
+    [SerializeField]
+    private Lifebar lifebar;
     [SerializeField]
     private GameObject deathMenu;
 
+    public static ManageLife instance;
+
+    private void Awake()
+    {
+        if (instance != null)
+        {
+            return;
+        }
+        instance = this;
+    }
+
     private void Start()
     {
-        lifebar.SetMaxHealth(health);   
+        health = maxHealth;
+        lifebar.SetMaxHealth(health);
     }
-
-    private void Update()
-    {
-
-    }
-
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -40,5 +49,28 @@ public class ManageLife : MonoBehaviour
         Time.timeScale = 0;
         charaMove.instance.enabled = false;
         Menu.instance.fillInfo();
+    }
+
+    public int getMaxHealth()
+    {
+        return maxHealth;
+    }
+
+    public int getHealth()
+    {
+        return health;
+    }
+
+    public void heal(int bonus)
+    {
+        if (health + bonus >= maxHealth)
+        {
+            health = maxHealth;
+        }
+        else
+        {
+            health += bonus;
+        }
+        lifebar.setHealth(health);
     }
 }
